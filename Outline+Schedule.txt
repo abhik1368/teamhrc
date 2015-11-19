@@ -1,0 +1,16 @@
+General ideas:
+	1) # of contacts with Hillary (ex. Sidney Blumenthal)
+	2) Sentiment analysis
+		a) Over time
+		b) Categorized by person, location, 
+		c) Vocabulary profile / word count by part of speech - can syntax impart intention?
+	3) Normalizing sentiment - baseline attitude of Hillary? Wingman?
+
+This week:
+	John: get MySQL tables into pandas DataFrame
+	John / Jake: wrangling into plot-ready forms
+	Chris: missingness, bad data
+
+Over the weekend:
+	Each choose a package / tool, start analyzing text with tools
+	Preliminary visualizations
