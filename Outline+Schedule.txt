@@ -14,3 +14,10 @@ This week:
 Over the weekend:
 	Each choose a package / tool, start analyzing text with tools
 	Preliminary visualizations
+
+notes - 11/19
+counts of words (i.e. benghazi) from vs to, different people
+
+from hillary sentiment over time by recipient (and by topic)
+from hillary average sentiment by recipient (and by topic)
+
