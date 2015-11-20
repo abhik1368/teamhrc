@@ -9,7 +9,9 @@ General ideas:
 This week:
 	John: get MySQL tables into pandas DataFrame
 	John / Jake: wrangling into plot-ready forms
-	Chris: missingness, bad data
+	Chris: missingness, bad data 
+	Jake: 1) wordcounts that aren't stop words in NLTK to unbias our "keywords", 2) NLTK sentiment analysis in new column
+	John: 1) counts per person per topic 2) Gensim analysis in new column
 
 Over the weekend:
 	Each choose a package / tool, start analyzing text with tools
