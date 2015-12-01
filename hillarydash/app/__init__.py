@@ -4,6 +4,7 @@ import StringIO
 from datetime import datetime
 import re
 from os import path
+import ast
 
 import pandas as pd
 import seaborn as sns
@@ -13,11 +14,12 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 from PIL import Image
+from textblob import TextBlob
 
 from flask import Flask, g, session, make_response
 from flask import render_template, flash, redirect, url_for
 from flask import request, send_file
-from .forms import PersonTopicForm, WordcloudForm
+from .forms import PersonTopicForm, WordcloudForm, SentPlotForm
 from flask.ext.mysql import MySQL
 from flask.ext.cache import Cache
 
@@ -160,6 +162,36 @@ def GetTextRange(df, person, dateFrom = '2008-05-01', dateTo = '2015-05-13'):
     
     return ' '.join([word for word in emails if word not in stoplist])
 
+def GetSentimentPerPerson(df, person):
+    
+    text = df[['MetadataFrom','ExtractedBodyText']].loc[
+            (df.MetadataFrom.str.contains('(' + person + ')'))]
+    
+    text.ExtractedBodyText = text.ExtractedBodyText.apply(lambda x: rmBoring(rmNonAlpha(x)).decode('ascii', 'ignore'))
+    
+    text['sentiment'] = text['ExtractedBodyText'].apply(lambda x: TextBlob(x).polarity)
+
+    return text.loc[text.sentiment != 0] # only return meaningful         
+
+def GetSentimentForPeople(df, target, personlist):
+    
+    sentimentlist = list()
+
+    stoplist = set('for a of the and to in on from'.split())
+    
+    for person in personlist:
+        text = df['ExtractedBodyText'].loc[
+                (df.MetadataFrom.str.contains('(' + target + ')'))
+                & (df.MetadataTo.str.contains('(' + person + ')'))].values.tolist()
+        
+        text = ' '.join([str(word) for word in text if word not in stoplist])
+        text = rmBoring(rmNonAlpha(text)).decode('ascii', 'ignore')
+        
+        sentimentlist.append(tuple((person, TextBlob(text).polarity)))
+    
+    return sentimentlist
+
+
 # get emails globally?
 Emails = getEmails()
 Emails.MetadataDateSent = pd.to_datetime(Emails.MetadataDateSent)
@@ -203,12 +235,67 @@ def wordcloud():
                             form = form,
                             person = person)   
 
+
+@app.route('/sentiment', methods=['GET', 'POST'])
+def sentiment():
+    form = SentPlotForm(request.form)
+
+    personlist = request.args.getlist('personlist')
+    target = request.args.get('target')
+
+    if request.method == 'POST' and form.validate():        
+        return redirect(url_for('sentiment'))
+
+    return render_template('sentiment.html', 
+                            form = form,
+                            target = target,
+                            personlist = ','.join(personlist))   
+
+@app.route('/fig/<target>/<personlist>/sentplot.png')
+def sentplot(target, personlist):
+
+    target = re.sub(r'\+', ' ', target)
+    EmailSnt = GetSentimentPerPerson(Emails, target)
+
+    plt.clf()
+
+    sns.distplot(EmailSnt.sentiment)
+    plt.xlim(-1,1)
+    plt.title('Email Sentiment: {}'.format(target), fontsize = 16)
+
+    fig = plt.gcf()
+    img = StringIO.StringIO()
+    fig.savefig(img)
+    img.seek(0)
+
+    return send_file(img, mimetype='image/png')
+
+@app.route('/fig/<target>/<personlist>/sentpeopleplot.png')
+def sentpeopleplot(target, personlist):
+
+    target = re.sub(r'\+', ' ', target)
+    personlist = personlist.split(',')
+
+    s = GetSentimentForPeople(Emails, target, personlist)
+    s = pd.DataFrame(s, columns = ['Person', 'Sentiment'])
+
+    plt.clf()
+
+    sns.barplot(x='Person', y = 'Sentiment', data=s)
+    plt.ylabel('Sentiment')
+    plt.title('How {} feels'.format(target))
+
+    fig = plt.gcf()
+    img = StringIO.StringIO()
+    fig.savefig(img)
+    img.seek(0)
+
+    return send_file(img, mimetype='image/png')
+
 @app.route('/fig/<personlist>/<topiclist>/ptplot.png')
 def ptplot(personlist, topiclist):
 
     PersonTopic = buildCounterDF(personlist.split(','), topiclist)
-
-    # scale = len(personlist.join(','))
 
     plt.clf()
 
@@ -225,6 +312,8 @@ def ptplot(personlist, topiclist):
 
 @app.route('/fig/<person>/cloudplot.png')
 def cloudplot(person):
+
+    person = re.sub(r'\+', ' ', person)
 
     text = GetTextRange(Emails, person)
     text = rmBoring(rmNonAlpha(text)).decode('ascii', 'ignore')

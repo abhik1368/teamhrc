@@ -1,0 +1,62 @@
+ 
+{% extends "base.html" %}
+{% block content %}
+
+
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li><a href="{{ url_for('index') }}">Overview</a></li>
+          <li><a href="#">Background</a></li>
+          <li><a href="{{ url_for('counter') }}">EPT Counter </a></li>
+          <li><a href="{{ url_for('wordcloud') }}">Wordcloud Generator </a></li>
+          <li class="active"><a href="{{ url_for('sentiment') }}">Sentiment Analysis <span class="sr-only">(current)</span></a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="">About</a></li>
+          <li><a href="">Code</a></li>
+        </ul>
+      </div>
+
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">Sentiment Analysis</h1>
+      <p class="introtext"> How do people feel? This tool investigates email sentiment, both for one person and for the people they talk to. Select who you're interested in, and who that person is interested - two graphs will be returned. On the left - the distribution of sentiment for the person your interested. On the right - the net sentiment per person for the person you're interested in.</p> 
+
+      <!-- if we have input, display graph -->
+      {% if request.args.get('target') != None and 
+            request.args.get('personlist') != None %} 
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title" style="text-align:center;">Graph Results</h3>
+          </div>
+          <div class="panel-body">
+            <span><center>
+              <img src="{{ url_for('sentplot', target = target, personlist = personlist) }}" alt="Distribution of sentiment" style = "position:relative;top:-10px;" height = 600 width = 650>
+              <img src="{{ url_for('sentpeopleplot', target = target, personlist = personlist) }}" alt="Personal sentiment towards others" style = "position:relative;top:-10px;" height = 600 width = 650>
+            </center></span>
+          </div>
+        </div>
+        <h3 style = "text-align:center;">Analyze again?</h3>
+      {% endif %}
+      
+      <form class = "form-inline" action="sentiment" name="sentiment" 
+        style = "text-align:center;">
+      <div class = "form-group">
+        <div style = "color: black;">
+            <b> Who are you interested in? </b>
+            <b style = "padding-left:100px;padding-bottom:50px;"> Who are they interested in? </b>
+            <br>
+            <span style = "vertical-align: top;">{{ form.target(class = 'form-control', id = 'target') }}</span>
+            <span style = "padding-left:100px;">{{ form.personlist(class = 'form-control', id = 'personlist') }}</span><br>
+        </div>
+        <br><br>
+        <p style = "color: black;">
+          <button type="submit" class="btn btn-primary"> Analyze sentiment!</button>
+        </p>
+      </div>
+    </form>     
+
+
+
+{% endblock %}
+
+

@@ -9,6 +9,7 @@
           <li><a href="#">Background</a></li>
           <li class="active"><a href="{{ url_for('counter') }}">EPT Counter <span class="sr-only">(current)</span></a></li>
           <li><a href="{{ url_for('wordcloud') }}">Wordcloud Generator </a></li>
+          <li><a href="{{ url_for('sentiment') }}">Sentiment Analysis </a></li>
         </ul>
         <ul class="nav nav-sidebar">
           <li><a href="">About</a></li>
@@ -29,7 +30,7 @@
             </div>
             <div class="panel-body">
               <div style="text-align:center;">
-                <img src="{{ url_for('ptplot', personlist = personlist, topiclist = topiclist ) }}" alt="Email - Person - Topic results" style = "position:relative;top:-10px;" height = 650, width = 800>
+                <img src="{{ url_for('ptplot', personlist = personlist, topiclist = topiclist ) }}" alt="Email - Person - Topic results" style = "position:relative;top:-10px;" height = 650 width = 800>
               </div>
             </div>
           </div>

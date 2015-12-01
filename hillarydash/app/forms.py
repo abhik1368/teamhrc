@@ -12,15 +12,8 @@ fullpersonlist = [('Hillary Clinton', 'Hillary Clinton'),
     					('Lona Valmoro', 'Lona Valmoro'),
     					('Anne Marie Slaughter', 'Anne Marie Slaughter'),
     					('Richard Verma', 'Richard Verma'),
-    					('Melanne Verveer', 'Melanne Verveer'),
     					('Lissa Muscatine', 'Lissa Muscatine'),
-    					('Judith McHale', 'Judith McHale'),
-    					('Strobe Talbott', 'Strobe Talbott'),
-    					('Betsy Ebeling', 'Betsy Ebeling'),
     					('Monica Hanley', 'Monica Hanley'),
-    					('Robert Russo', 'Robert Russo'),
-    					('Kris Balderston', 'Kris Balderston'),
-    					('Cherie Blair', 'Cherie Blair')
     				]
 
 class PersonTopicForm(Form):
@@ -34,3 +27,13 @@ class WordcloudForm(Form):
 	person = SelectField('person',
 					choices = fullpersonlist,
 					validators = [DataRequired()])
+
+class SentPlotForm(Form):
+	target = SelectField('target',
+					choices = fullpersonlist,
+					validators = [DataRequired()])
+
+	personlist = SelectMultipleField('personlist', 
+    				choices = fullpersonlist, 
+    				default = 1,
+    				validators=[DataRequired()])
