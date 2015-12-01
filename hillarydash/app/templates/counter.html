@@ -8,38 +8,51 @@
           <li><a href="{{ url_for('index') }}">Overview</a></li>
           <li><a href="#">Background</a></li>
           <li class="active"><a href="{{ url_for('counter') }}">EPT Counter <span class="sr-only">(current)</span></a></li>
+          <li><a href="{{ url_for('wordcloud') }}">Wordcloud Generator </a></li>
         </ul>
         <ul class="nav nav-sidebar">
-          <li><a href="">Nav item</a></li>
-          <li><a href="">Nav item again</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Code</a></li>
         </ul>
       </div>
 
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <h1 class="page-header">Email - Person - Topic Counter</h1>
       <p class="introtext"> Who mentioned what? This tool allows you to input a list of people and topics -- the resulting graph will display how many times each person wrote an email with that topic mentioned.</p> 
+      
+        <!-- if we have input, display graph -->
+        {% if request.args.get('personlist') != None 
+            and request.args.get('topiclist') != None %} 
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title" style="text-align:center;">Graph Results</h3>
+            </div>
+            <div class="panel-body">
+              <div style="text-align:center;">
+                <img src="{{ url_for('ptplot', personlist = personlist, topiclist = topiclist ) }}" alt="Email - Person - Topic results" style = "position:relative;top:-10px;" height = 650, width = 800>
+              </div>
+            </div>
+          </div>
+          <br><br>
+          <h3 style = "text-align:center;">Search again?</h3>
+        {% endif %}
+
       <form class = "form-inline" action="counter" name="counter" style = "text-align:center;">
       <div class = "form-group">
-        <p style = "color: black;">
-          {{ form.personlist(class = 'form-control', id = 'personlist', placeholder='Enter list of people...', size = 80) }}<br>
-        </p>
         <p style = "color: black;">
           {{ form.topiclist(class = 'form-control', id = 'topiclist', placeholder='Enter list of topics...', size = 80) }}<br>
         </p>
         <p style = "color: black;">
-          <button type="submit" class="btn btn-default" data-loading-text="Working hard!">Get graph! </button>
+          <form class="form form-horizontal" method="post" role="form" style = "background-color: blue;">
+            <!-- {{ form.personlist(class_ = 'multiselect', id = 'personlist') }} -->
+            {{ form.personlist(class = 'form-control', id = 'personlist') }}<br>
+          </form>
+        </p>
+        <p style = "color: black;">
+          <button type="submit" class="btn btn-primary"> Get graph! </button>
         </p>
       </div>
     </form>     
-
-    <!-- if we have input, display graph -->
-    {% if request.args.get('personlist') != None 
-        and request.args.get('topiclist') != None %} 
-      <div style="text-align:center;">
-        <h3>Graph results:</h3>
-        <img src="{{ url_for('plot', personlist = personlist, topiclist = topiclist ) }}" alt="Image Placeholder" style = "position:relative;top:-10px;">
-      </div>
-    {% endif %}
 
 {% endblock %}
 

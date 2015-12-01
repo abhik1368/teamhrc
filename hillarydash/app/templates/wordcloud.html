@@ -1,0 +1,49 @@
+ 
+{% extends "base.html" %}
+{% block content %}
+
+
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li><a href="{{ url_for('index') }}">Overview</a></li>
+          <li><a href="#">Background</a></li>
+          <li><a href="{{ url_for('counter') }}">EPT Counter </a></li>
+          <li class="active"><a href="{{ url_for('wordcloud') }}">Wordcloud Generator <span class="sr-only">(current)</span></a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="">About</a></li>
+          <li><a href="">Code</a></li>
+        </ul>
+      </div>
+
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">Wordcloud Generator</h1>
+      <p class="introtext"> How do people talk? A wordcloud allows you a snapshot of the kind of vocabulary each person uses in a typical email. The size of the word indicates frequency - the larger the word, the more frequently it is used. Select a person from the dropdown and press the generate button to begin.</p> 
+
+      <!-- if we have input, display graph -->
+      {% if request.args.get('person') != None %} 
+        <div style="text-align:center;">
+          <h3> Wordcloud - {{ person }} </h3>
+          <img src="{{ url_for('cloudplot', person = person) }}" alt="Wordcloud" style = "position:relative;top:-10px;">
+        </div>
+        <h3 style = "text-align:center;">Generate again?</h3>
+      {% endif %}
+      
+      <form class = "form-inline" action="wordcloud" name="wordcloud" style = "text-align:center;">
+      <div class = "form-group">
+        <p style = "color: black;">
+          <form class="form form-horizontal" method="post" role="form" style = "background-color: blue;">
+            {{ form.person(class = 'form-control', id = 'person') }}<br>
+          </form>
+        </p>
+        <p style = "color: black;">
+          <button type="submit" class="btn btn-primary"> Generate wordcloud!</button>
+        </p>
+      </div>
+    </form>     
+
+
+
+{% endblock %}
+
+

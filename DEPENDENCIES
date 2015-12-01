@@ -1,0 +1,11 @@
+all should be available via pip:
+
+Flask
+Flask-WTF
+flask-mysql
+pandas
+seaborn
+matplotlib
+Flask-Cache
+wordcloud
+Image (PIL / Pillow)
