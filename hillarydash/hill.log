@@ -1,0 +1,146 @@
+/home/ubuntu/anaconda/lib/python2.7/site-packages/matplotlib/__init__.py:872: UserWarning: axes.color_cycle is deprecated and replaced with axes.prop_cycle; please use the latter.
+  warnings.warn(self.msg_depr % (key, alt_key))
+ * Running on http://0.0.0.0:5000/
+ * Restarting with reloader
+/home/ubuntu/anaconda/lib/python2.7/site-packages/matplotlib/__init__.py:872: UserWarning: axes.color_cycle is deprecated and replaced with axes.prop_cycle; please use the latter.
+  warnings.warn(self.msg_depr % (key, alt_key))
+173.76.10.42 - - [05/Dec/2015 16:47:17] "HEAD / HTTP/1.1" 200 -
+173.76.10.42 - - [05/Dec/2015 16:47:18] "GET / HTTP/1.1" 200 -
+173.76.10.42 - - [05/Dec/2015 16:47:18] "GET / HTTP/1.1" 200 -
+173.76.10.42 - - [05/Dec/2015 16:47:19] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 -
+173.76.10.42 - - [05/Dec/2015 16:47:19] "GET /static/css/dashboard.css HTTP/1.1" 200 -
+173.76.10.42 - - [05/Dec/2015 16:47:20] "GET /static/js/bootstrap-multiselect.js HTTP/1.1" 200 -
+173.76.10.42 - - [05/Dec/2015 16:47:20] "GET /static/css/bootstrap-multiselect.css HTTP/1.1" 200 -
+173.76.10.42 - - [05/Dec/2015 16:47:20] "GET /static/js/ie-emulation-modes-warning.js HTTP/1.1" 200 -
+173.76.10.42 - - [05/Dec/2015 16:47:21] "GET /static/img/emailnum.png HTTP/1.1" 200 -
+173.76.10.42 - - [05/Dec/2015 16:47:21] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 -
+173.76.10.42 - - [05/Dec/2015 16:47:22] "GET /static/js/ie10-viewport-bug-workaround.js HTTP/1.1" 200 -
+173.76.10.42 - - [05/Dec/2015 16:47:22] "GET /static/img/years.png HTTP/1.1" 200 -
+173.76.10.42 - - [05/Dec/2015 16:47:22] "GET /static/img/numsenders.png HTTP/1.1" 200 -
+173.76.10.42 - - [05/Dec/2015 16:47:23] "GET /static/img/numreceivers.png HTTP/1.1" 200 -
+173.76.10.42 - - [05/Dec/2015 17:47:23] "GET /static/img/favicon.ico HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/home/ubuntu/anaconda/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/home/ubuntu/anaconda/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/ubuntu/anaconda/lib/python2.7/SocketServer.py", line 657, in __init__
+    self.finish()
+  File "/home/ubuntu/anaconda/lib/python2.7/SocketServer.py", line 716, in finish
+    self.wfile.close()
+  File "/home/ubuntu/anaconda/lib/python2.7/socket.py", line 283, in close
+    self.flush()
+  File "/home/ubuntu/anaconda/lib/python2.7/socket.py", line 307, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+173.76.10.42 - - [05/Dec/2015 17:47:23] "GET /counter HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/home/ubuntu/anaconda/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/home/ubuntu/anaconda/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/ubuntu/anaconda/lib/python2.7/SocketServer.py", line 657, in __init__
+    self.finish()
+  File "/home/ubuntu/anaconda/lib/python2.7/SocketServer.py", line 716, in finish
+    self.wfile.close()
+  File "/home/ubuntu/anaconda/lib/python2.7/socket.py", line 283, in close
+    self.flush()
+  File "/home/ubuntu/anaconda/lib/python2.7/socket.py", line 307, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+151.202.21.221 - - [05/Dec/2015 17:47:24] "GET / HTTP/1.1" 200 -
+173.76.10.42 - - [05/Dec/2015 17:47:24] "GET /favicon.ico HTTP/1.1" 404 -
+151.202.21.221 - - [05/Dec/2015 17:49:43] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+151.202.21.221 - - [05/Dec/2015 17:49:44] "GET /static/css/dashboard.css HTTP/1.1" 304 -
+151.202.21.221 - - [05/Dec/2015 17:49:44] "GET /static/css/bootstrap-multiselect.css HTTP/1.1" 304 -
+151.202.21.221 - - [05/Dec/2015 17:49:45] "GET /static/js/bootstrap-multiselect.js HTTP/1.1" 304 -
+151.202.21.221 - - [05/Dec/2015 17:49:45] "GET /static/js/ie-emulation-modes-warning.js HTTP/1.1" 304 -
+151.202.21.221 - - [05/Dec/2015 17:49:45] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+151.202.21.221 - - [05/Dec/2015 17:49:46] "GET /static/js/ie10-viewport-bug-workaround.js HTTP/1.1" 304 -
+151.202.21.221 - - [05/Dec/2015 17:49:46] "GET /static/img/emailnum.png HTTP/1.1" 200 -
+151.202.21.221 - - [05/Dec/2015 17:49:47] "GET /static/js/ie-emulation-modes-warning.js HTTP/1.1" 304 -
+151.202.21.221 - - [05/Dec/2015 17:49:47] "GET /static/img/years.png HTTP/1.1" 200 -
+151.202.21.221 - - [05/Dec/2015 17:49:48] "GET /static/img/numsenders.png HTTP/1.1" 200 -
+151.202.21.221 - - [05/Dec/2015 17:49:48] "GET /static/img/numreceivers.png HTTP/1.1" 200 -
+151.202.21.221 - - [05/Dec/2015 17:49:49] "GET /static/img/numsenders.png HTTP/1.1" 304 -
+151.202.21.221 - - [05/Dec/2015 17:49:49] "GET /static/img/favicon.ico HTTP/1.1" 200 -
+151.202.21.221 - - [05/Dec/2015 18:47:38] "GET / HTTP/1.1" 200 -
+151.202.21.221 - - [05/Dec/2015 18:47:48] "GET /counter HTTP/1.1" 200 -
+151.202.21.221 - - [05/Dec/2015 18:47:55] "GET /counter?topiclist=tea&personlist=Hillary+Clinton&personlist=Sidney+Blumenthal&personlist=Huma+Abedin&personlist=Jake+Sullivan&personlist=Cheryl+Mills&personlist=Lauren+Jiloty&personlist=Philippe+Reines&personlist=Lona+Valmoro&personlist=Anne+Marie+Slaughter&personlist=Richard+Verma&personlist=Lissa+Muscatine&personlist=Monica+Hanley HTTP/1.1" 200 -
+/home/ubuntu/programming/teamhrc/hillarydash/app/__init__.py:58: UserWarning: This pattern has match groups. To actually get the groups, use str.extract.
+  for topic in topics}
+/home/ubuntu/anaconda/lib/python2.7/site-packages/matplotlib/__init__.py:892: UserWarning: axes.color_cycle is deprecated and replaced with axes.prop_cycle; please use the latter.
+  warnings.warn(self.msg_depr % (key, alt_key))
+/home/ubuntu/anaconda/lib/python2.7/site-packages/matplotlib/font_manager.py:1287: UserWarning: findfont: Font family [u'sans-serif'] not found. Falling back to Bitstream Vera Sans
+  (prop.get_family(), self.defaultFamily[fontext]))
+/home/ubuntu/anaconda/lib/python2.7/site-packages/matplotlib/font_manager.py:1297: UserWarning: findfont: Could not match :family=Bitstream Vera Sans:style=normal:variant=normal:weight=400:stretch=normal:size=10.0. Returning /usr/share/matplotlib/mpl-data/fonts/ttf/cmb10.ttf
+  UserWarning)
+/home/ubuntu/anaconda/lib/python2.7/site-packages/matplotlib/font_manager.py:1297: UserWarning: findfont: Could not match :family=Bitstream Vera Sans:style=normal:variant=normal:weight=400:stretch=normal:size=11.0. Returning /usr/share/matplotlib/mpl-data/fonts/ttf/cmb10.ttf
+  UserWarning)
+/home/ubuntu/anaconda/lib/python2.7/site-packages/matplotlib/font_manager.py:1297: UserWarning: findfont: Could not match :family=Bitstream Vera Sans:style=normal:variant=normal:weight=400:stretch=normal:size=9.35. Returning /usr/share/matplotlib/mpl-data/fonts/ttf/cmb10.ttf
+  UserWarning)
+151.202.21.221 - - [05/Dec/2015 18:47:58] "GET /fig/Hillary%20Clinton%2CSidney%20Blumenthal%2CHuma%20Abedin%2CJake%20Sullivan%2CCheryl%20Mills%2CLauren%20Jiloty%2CPhilippe%20Reines%2CLona%20Valmoro%2CAnne%20Marie%20Slaughter%2CRichard%20Verma%2CLissa%20Muscatine%2CMonica%20Hanley/tea/ptplot.png HTTP/1.1" 200 -
+151.202.21.221 - - [05/Dec/2015 18:48:00] "GET /wordcloud HTTP/1.1" 200 -
+151.202.21.221 - - [05/Dec/2015 18:48:04] "GET /wordcloud?person=Hillary+Clinton HTTP/1.1" 200 -
+/home/ubuntu/anaconda/lib/python2.7/site-packages/PIL/ImageDraw.py:104: UserWarning: setfont() is deprecated. Please set the attribute directly instead.
+  "Please set the attribute directly instead.")
+151.202.21.221 - - [05/Dec/2015 18:48:06] "GET /fig/Hillary%20Clinton/cloudplot.png HTTP/1.1" 200 -
+151.202.21.221 - - [05/Dec/2015 18:48:10] "GET /sentiment HTTP/1.1" 200 -
+151.202.21.221 - - [05/Dec/2015 18:48:14] "GET /sentiment?target=Hillary+Clinton&personlist=Sidney+Blumenthal&personlist=Huma+Abedin&personlist=Jake+Sullivan&personlist=Cheryl+Mills HTTP/1.1" 200 -
+/home/ubuntu/programming/teamhrc/hillarydash/app/__init__.py:168: UserWarning: This pattern has match groups. To actually get the groups, use str.extract.
+  (df.MetadataFrom.str.contains('(' + person + ')'))]
+/home/ubuntu/anaconda/lib/python2.7/site-packages/matplotlib/font_manager.py:1297: UserWarning: findfont: Could not match :family=Bitstream Vera Sans:style=normal:variant=normal:weight=400:stretch=normal:size=16.0. Returning /usr/share/matplotlib/mpl-data/fonts/ttf/cmb10.ttf
+  UserWarning)
+151.202.21.221 - - [05/Dec/2015 18:48:16] "GET /fig/Hillary%20Clinton/Sidney%20Blumenthal%2CHuma%20Abedin%2CJake%20Sullivan%2CCheryl%20Mills/sentplot.png HTTP/1.1" 200 -
+/home/ubuntu/programming/teamhrc/hillarydash/app/__init__.py:184: UserWarning: This pattern has match groups. To actually get the groups, use str.extract.
+  (df.MetadataFrom.str.contains('(' + target + ')'))
+/home/ubuntu/programming/teamhrc/hillarydash/app/__init__.py:185: UserWarning: This pattern has match groups. To actually get the groups, use str.extract.
+  & (df.MetadataTo.str.contains('(' + person + ')'))].values.tolist()
+/home/ubuntu/anaconda/lib/python2.7/site-packages/matplotlib/font_manager.py:1297: UserWarning: findfont: Could not match :family=Bitstream Vera Sans:style=normal:variant=normal:weight=400:stretch=normal:size=12.0. Returning /usr/share/matplotlib/mpl-data/fonts/ttf/cmb10.ttf
+  UserWarning)
+151.202.21.221 - - [05/Dec/2015 18:48:17] "GET /fig/Hillary%20Clinton/Sidney%20Blumenthal%2CHuma%20Abedin%2CJake%20Sullivan%2CCheryl%20Mills/sentpeopleplot.png HTTP/1.1" 200 -
+151.202.21.221 - - [05/Dec/2015 18:48:24] "GET /sentiment?target=Hillary+Clinton&personlist=Sidney+Blumenthal&personlist=Huma+Abedin&personlist=Jake+Sullivan&personlist=Cheryl+Mills HTTP/1.1" 200 -
+151.202.21.221 - - [05/Dec/2015 18:48:29] "GET /sentiment?target=Hillary+Clinton&personlist=Sidney+Blumenthal&personlist=Huma+Abedin&personlist=Jake+Sullivan&personlist=Cheryl+Mills HTTP/1.1" 200 -
+151.202.21.221 - - [05/Dec/2015 18:48:31] "GET /sentiment?target=Hillary+Clinton&personlist=Sidney+Blumenthal&personlist=Huma+Abedin&personlist=Jake+Sullivan&personlist=Cheryl+Mills HTTP/1.1" 200 -
+151.202.21.221 - - [05/Dec/2015 18:48:32] "GET /sentiment?target=Hillary+Clinton&personlist=Sidney+Blumenthal&personlist=Huma+Abedin&personlist=Jake+Sullivan&personlist=Cheryl+Mills HTTP/1.1" 200 -
+151.202.21.221 - - [05/Dec/2015 18:48:33] "GET /sentiment?target=Hillary+Clinton&personlist=Sidney+Blumenthal&personlist=Huma+Abedin&personlist=Jake+Sullivan&personlist=Cheryl+Mills HTTP/1.1" 200 -
+173.63.127.167 - - [05/Dec/2015 19:07:41] "GET /index HTTP/1.1" 200 -
+173.63.127.167 - - [05/Dec/2015 19:07:41] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 19:07:42] "GET /static/css/dashboard.css HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 19:07:42] "GET /static/js/bootstrap-multiselect.js HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 19:07:43] "GET /static/css/bootstrap-multiselect.css HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 19:07:43] "GET /static/js/ie-emulation-modes-warning.js HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 19:07:43] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 19:07:44] "GET /static/js/ie10-viewport-bug-workaround.js HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 19:07:44] "GET /static/img/emailnum.png HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 19:07:45] "GET /static/img/years.png HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 19:07:45] "GET /static/img/numsenders.png HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 19:07:46] "GET /static/img/numreceivers.png HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 19:07:46] "GET /static/img/favicon.ico HTTP/1.1" 200 -
+ * Detected change in '/home/ubuntu/programming/teamhrc/hillarydash/app/__init__.py', reloading
+----------------------------------------
+Exception happened during processing of request from ('173.76.10.42', 62124)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('173.76.10.42', 62206)
+----------------------------------------
+ * Restarting with reloader
+/home/ubuntu/anaconda/lib/python2.7/site-packages/matplotlib/__init__.py:872: UserWarning: axes.color_cycle is deprecated and replaced with axes.prop_cycle; please use the latter.
+  warnings.warn(self.msg_depr % (key, alt_key))
+173.63.127.167 - - [05/Dec/2015 21:14:26] "GET /index HTTP/1.1" 200 -
+173.63.127.167 - - [05/Dec/2015 21:14:27] "GET /static/css/bootstrap-multiselect.css HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 21:14:27] "GET /static/css/dashboard.css HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 21:14:27] "GET /static/img/emailnum.png HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 21:14:28] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 21:14:28] "GET /static/js/bootstrap-multiselect.js HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 21:14:29] "GET /static/js/ie-emulation-modes-warning.js HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 21:14:29] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 21:14:29] "GET /static/js/ie10-viewport-bug-workaround.js HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 21:14:30] "GET /static/img/years.png HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 21:14:30] "GET /static/img/numsenders.png HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 21:14:31] "GET /static/img/numreceivers.png HTTP/1.1" 304 -
+173.63.127.167 - - [05/Dec/2015 21:14:31] "GET /static/img/favicon.ico HTTP/1.1" 200 -

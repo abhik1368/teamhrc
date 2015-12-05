@@ -1,0 +1,31 @@
+/home/ubuntu/anaconda/lib/python2.7/site-packages/matplotlib/__init__.py:872: UserWarning: axes.color_cycle is deprecated and replaced with axes.prop_cycle; please use the latter.
+  warnings.warn(self.msg_depr % (key, alt_key))
+ * Running on http://0.0.0.0:5000/
+ * Restarting with reloader
+/home/ubuntu/anaconda/lib/python2.7/site-packages/matplotlib/__init__.py:872: UserWarning: axes.color_cycle is deprecated and replaced with axes.prop_cycle; please use the latter.
+  warnings.warn(self.msg_depr % (key, alt_key))
+204.148.42.2 - - [01/Dec/2015 20:51:17] "GET / HTTP/1.1" 200 -
+204.148.42.2 - - [01/Dec/2015 20:51:18] "GET /static/img/favicon.ico HTTP/1.1" 200 -
+204.148.42.2 - - [01/Dec/2015 20:51:24] "GET /counter HTTP/1.1" 200 -
+204.148.42.2 - - [01/Dec/2015 20:51:28] "GET /wordcloud HTTP/1.1" 200 -
+204.148.42.2 - - [01/Dec/2015 20:51:32] "GET /wordcloud?person=Hillary+Clinton HTTP/1.1" 200 -
+204.148.42.2 - - [01/Dec/2015 20:51:34] "GET /sentiment HTTP/1.1" 200 -
+204.148.42.2 - - [01/Dec/2015 20:51:36] "GET /sentiment?target=Hillary+Clinton&personlist=Huma+Abedin HTTP/1.1" 200 -
+204.148.42.2 - - [01/Dec/2015 20:52:29] "GET /index HTTP/1.1" 200 -
+204.148.42.2 - - [01/Dec/2015 20:52:29] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+204.148.42.2 - - [01/Dec/2015 20:52:30] "GET /static/css/dashboard.css HTTP/1.1" 304 -
+204.148.42.2 - - [01/Dec/2015 20:52:30] "GET /static/css/bootstrap-multiselect.css HTTP/1.1" 304 -
+204.148.42.2 - - [01/Dec/2015 20:52:30] "GET /static/js/bootstrap-multiselect.js HTTP/1.1" 304 -
+204.148.42.2 - - [01/Dec/2015 20:52:31] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+204.148.42.2 - - [01/Dec/2015 20:52:31] "GET /static/js/ie-emulation-modes-warning.js HTTP/1.1" 304 -
+204.148.42.2 - - [01/Dec/2015 20:52:32] "GET /static/js/ie10-viewport-bug-workaround.js HTTP/1.1" 304 -
+204.148.42.2 - - [01/Dec/2015 20:52:32] "GET /static/img/emailnum.png HTTP/1.1" 304 -
+204.148.42.2 - - [01/Dec/2015 20:52:32] "GET /static/img/years.png HTTP/1.1" 304 -
+204.148.42.2 - - [01/Dec/2015 20:52:33] "GET /static/img/numsenders.png HTTP/1.1" 304 -
+204.148.42.2 - - [01/Dec/2015 20:52:33] "GET /static/img/numreceivers.png HTTP/1.1" 304 -
+204.148.42.2 - - [01/Dec/2015 20:52:34] "GET /static/img/favicon.ico HTTP/1.1" 200 -
+204.148.42.2 - - [01/Dec/2015 20:52:38] "GET /counter HTTP/1.1" 200 -
+204.148.42.2 - - [01/Dec/2015 20:52:56] "GET /counter?topiclist=benghazi%2Clibya%2Cobama%2Cvideo&personlist=Huma+Abedin&personlist=Jake+Sullivan HTTP/1.1" 200 -
+/home/ubuntu/programming/teamhrc/hillarydash/app/__init__.py:58: UserWarning: This pattern has match groups. To actually get the groups, use str.extract.
+  for topic in topics}
+ : cannot connect to X server localhost:10.0
